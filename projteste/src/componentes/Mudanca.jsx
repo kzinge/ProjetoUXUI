@@ -6,7 +6,7 @@ function Mudanca(){
         let div = document.createElement("div");
         div.textContent = "SURPRISE";
 
-        sessao.appendChild(div);
+        sessao.appendChild(div);    
 
     }
     return(
