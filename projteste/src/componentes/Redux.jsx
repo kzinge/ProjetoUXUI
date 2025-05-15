@@ -2,7 +2,7 @@ const Redux = () => {
     return(
 
         <div>
-            <h1>Novo escopo de função</h1>
+            <h1>Deu certo</h1>
         </div>
     )
 }
