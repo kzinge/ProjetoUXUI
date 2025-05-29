@@ -1,0 +1,23 @@
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #4f46e5; /* Roxo elegante */
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #4338ca; /* Roxo mais escuro no hover */
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+  background-color: #3730a3; /* Clique mais escuro */
+}
