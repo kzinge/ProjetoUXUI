@@ -1,0 +1,6 @@
+.listadecarros, .carrosfiltrados{
+    display: flex;
+    font-size: 10px;
+    gap: 1rem;
+}
+
