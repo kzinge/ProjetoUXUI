@@ -10,7 +10,7 @@ body.dark-mode h2{
 body.dark-mode .tarefa{
   background-color: #400a5f;
   border-radius: 4px;
-  border: 2px solid #bb86fc;
+  border: 1px solid #bb86fc;
   border-left: 8px solid #bb86fc;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
   color: #ddd;

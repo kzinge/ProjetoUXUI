@@ -4,18 +4,21 @@ import "./Change.css"
 export default function Change() { // Criei a função aqui
   const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    if (darkMode) { // Caso darkmode for ativado ele adiciona a classe dark-mode
+  const toggleTheme = () => {
+    const auxDarkMode = !darkMode;
+    setDarkMode(auxDarkMode)
+
+    if (auxDarkMode){
       document.body.classList.add("dark-mode");
-    } else { // se for desativado, ele tira essa classe
-      document.body.classList.remove("dark-mode");
-    }
-  }, [darkMode]);
+    } else{
+      document.body.classList.remove("dark-mode")
+    };
+  }
 
   return (
     <div>
       <button
-        onClick={() => setDarkMode(!darkMode)}
+        onClick={toggleTheme}
       >
         Alternar Modo
       </button>
