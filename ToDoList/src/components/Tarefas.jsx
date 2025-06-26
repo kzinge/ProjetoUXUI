@@ -1,46 +1,44 @@
-import React, { useState } from "react";
-import './Tarefas.css'
+import './Tarefas.css';
 import Tarefa from "./Tarefa";
-import tarefasIniciais from "../tarefas";
 import Detalhamento from "./Detalhamento";
+import { useState, useEffect } from "react";
 
-export default function Tarefas() {
-  // estado que armazena a lista de tarefas
-  const [tarefasAux, setTarefas] = useState(tarefasIniciais);
-
-  // estado que armazena o ID da tarefa selecionada para detalhamento
+export default function Tarefas({ listaDeTarefas }) {
+  const [tarefasAux, setTarefasAux] = useState(listaDeTarefas); // cópia local
   const [idSelecionado, setIdSelecionado] = useState(null);
 
-  // encontra a tarefa com o ID selecionado
+  // atualiza tarefas locais sempre que a lista vinda do App mudar
+  useEffect(() => {
+    setTarefasAux(listaDeTarefas);
+  }, [listaDeTarefas]);
+
   const tarefaSelecionada = tarefasAux.find(tarefa => tarefa.id === idSelecionado);
 
-  // função para alterar o status da tarefa (concluir ou reabrir)
   const alterarStatus = (tarefaParaAlterar) => {
     const novasTarefas = tarefasAux.map((tarefa) =>
       tarefa.id === tarefaParaAlterar.id
-        ? { ...tarefa, status: !tarefa.status } // Inverte o status atual
+        ? { ...tarefa, status: !tarefa.status }
         : tarefa
     );
-    setTarefas(novasTarefas); // atualiza a lista de tarefas
+    setTarefasAux(novasTarefas);
   };
 
   return (
-    <div className="tarefas-container"> {/* container principal do componente */}
+    <div className="tarefas-container">
       <h2>Lista de Tarefas</h2>
 
-      {/* mostra o detalhamento da tarefa selecionada */}
       <Detalhamento 
         tarefa={tarefaSelecionada} 
-        onClose={() => setIdSelecionado(null)} // função para fechar o detalhamento
+        onClose={() => setIdSelecionado(null)}
       />
 
-      <div className="tarefas-lista"> {/* container da lista de tarefas */}
+      <div className="tarefas-lista">
         {tarefasAux.map(tarefa => (
           <div key={tarefa.id}>
             <Tarefa 
-              tarefa={tarefa} 
-              alterarstatus={() => alterarStatus(tarefa)} // função passada para alterar status
-              visualizar={() => setIdSelecionado(tarefa.id)} // seleciona tarefa para detalhamento
+              tarefa={tarefa}
+              visualizar={() => setIdSelecionado(tarefa.id)}
+              alterarstatus={() => alterarStatus(tarefa)} // função adicionada aqui
             />
           </div>
         ))}

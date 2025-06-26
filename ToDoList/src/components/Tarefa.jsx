@@ -1,6 +1,7 @@
 import './Tarefa.css';
 
 export default function Tarefa({ tarefa, alterarstatus, visualizar }) {
+
   return (
     <div className="tarefa">
       <h3>{tarefa.titulo}</h3>
