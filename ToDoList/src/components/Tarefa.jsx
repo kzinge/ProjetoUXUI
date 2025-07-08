@@ -1,37 +1,38 @@
 import './Tarefa.css';
 
-export default function Tarefa({ tarefa, alterarstatus, visualizar }) {
+export default function Tarefa({ tarefa, alterarstatus, visualizar, deletar, moverCima, moverBaixo }) {
 
   return (
     <div className="tarefa">
       <h3>{tarefa.titulo}</h3>
-      {/* exibe a descrição da tarefa, limitando a 50 caracteres e adicionando "..." se maior */}
       <p>
         {tarefa.descricao.length > 50 
           ? tarefa.descricao.slice(0, 50) + "..." 
           : tarefa.descricao}
       </p>
-      {/* condicional para verificar o status da tarefa */}
+
       {tarefa.status ? (
         <>
-          <span className="status concluida">Concluída</span> {/* se a tarefa está concluída */}
-
-          <div className="butoes"> {/* container dos botões */}
-            {/* botão para reabrir a tarefa, chama a função alterarstatus */}
+          <span className="status concluida">Concluída</span>
+          <div className="butoes">
             <button onClick={alterarstatus}>Reabrir Tarefa</button> 
-            {/* botão para visualizar detalhes da tarefa */}
             <button onClick={visualizar}>Visualizar</button>
+            <button onClick={deletar}>Deletar</button>
+            {/* Botões de movimentação */}
+            <button onClick={moverCima} title="Mover para cima">↑</button>
+            <button onClick={moverBaixo} title="Mover para baixo">↓</button>
           </div>
         </>
       ) : (
         <>
-          <span className="status pendente">Pendente</span> {/* se a tarefa está pendente */}
-
-          <div className="butoes"> {/* container dos botões */}
-            {/* botão para concluir a tarefa, chama a função alterarstatus */}
+          <span className="status pendente">Nova Tarefa</span>
+          <div className="butoes">
             <button onClick={alterarstatus}>Concluir Tarefa</button> 
-            {/* botão para visualizar detalhes da tarefa */}
             <button onClick={visualizar}>Visualizar</button>
+            <button onClick={deletar}>Deletar</button>
+            {/* Botões de movimentação */}
+            <button onClick={moverCima} title="Mover para cima">↑</button>
+            <button onClick={moverBaixo} title="Mover para baixo">↓</button>
           </div>
         </>
       )}

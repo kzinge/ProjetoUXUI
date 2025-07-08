@@ -15,8 +15,9 @@ function App() {
         listaDeTarefas={listaDeTarefas} 
         setListaDeTarefas={setListaDeTarefas} 
       />
+
       <Children>
-        <Tarefas listaDeTarefas={listaDeTarefas} />
+        <Tarefas listaDeTarefas={listaDeTarefas}  setListaDeTarefas={setListaDeTarefas}/>
       </Children>
     </>
   );

@@ -11,7 +11,7 @@ export default function NewTask({ listaDeTarefas, setListaDeTarefas }) {
       id: Date.now(), 
       titulo: novaTarefa,
       descricao: descricao,
-      status: true,
+      status: false,
     };
 
     setListaDeTarefas([...listaDeTarefas, nova]);
