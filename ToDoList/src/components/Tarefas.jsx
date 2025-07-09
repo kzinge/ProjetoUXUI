@@ -19,10 +19,9 @@ export default function Tarefas({ listaDeTarefas, setListaDeTarefas }) {
         ? { ...tarefa, status: !tarefa.status }
         : tarefa
     );
-    setListaDeTarefas(novasTarefas); // ✅ atualiza a lista global
+    setListaDeTarefas(novasTarefas);
   };
 
-  // ✅ Agora deleta da lista global
   const deletarTarefa = (id) => {
     const novaLista = listaDeTarefas.filter(tarefa => tarefa.id !== id);
     setListaDeTarefas(novaLista);
@@ -55,7 +54,7 @@ export default function Tarefas({ listaDeTarefas, setListaDeTarefas }) {
 
       <div className="tarefas-lista">
         {tarefasAux.map(tarefa => (
-          <div key={tarefa.id}>
+          <div key={tarefa.id} className='tarefa-item'>
             <Tarefa 
               tarefa={tarefa}
               visualizar={() => setIdSelecionado(tarefa.id)}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './NewTask.css';
 
 export default function NewTask({ listaDeTarefas, setListaDeTarefas }) {
   const [novaTarefa, setNovaTarefa] = useState('');
@@ -20,8 +21,8 @@ export default function NewTask({ listaDeTarefas, setListaDeTarefas }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit} className="new-task-form">
+      <div className="form-container">
         <label>
           <h3>Nova Tarefa</h3>
           <input

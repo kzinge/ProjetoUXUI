@@ -34,3 +34,37 @@ body.dark-mode .tarefa:hover{
   background-color: #400a5f;
   transform: scale(1.03);
 }
+
+/* Dark mode styles for the new task form */
+
+body.dark-mode .form-container {
+  background-color: #2a003b;
+  border-top: 0.5rem solid #bb86fc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode label h3 {
+  color: #f0e6ff;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #1a001f;
+  color: #eee;
+  border: 1px solid #bb86fc;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+  border-color: #bb86fc;
+  box-shadow: 0 0 5px rgba(187, 134, 252, 0.4);
+}
+
+body.dark-mode input[type="submit"] {
+  background-color: #bb86fc;
+  color: #2a003b;
+}
+
+body.dark-mode input[type="submit"]:hover {
+  background-color: #a46af3;
+}

@@ -21,8 +21,14 @@
   max-width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
   justify-content: center;
 }
 
+/* Item de tarefa */
+.tarefa-item {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
